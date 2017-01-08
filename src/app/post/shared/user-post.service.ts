@@ -14,8 +14,12 @@ export class UserPostService {
     // const postUrl: string = "asa";
     constructor(private http: Http) { }
 
-    getPost() {
+    getPostList() {
         return this.http.get(postApiUrl).map(res => res.json() as UserPost[]);
+    }
+
+    getPost(id: number) {
+        return this.http.get(postApiUrl + id).map(res => res.json() as UserPost);
     }
 
 }

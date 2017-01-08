@@ -4,7 +4,10 @@ import { Component } from '@angular/core';
     selector: 'app-root',
     template: `
         <h1>{{heading}}</h1>
-        <post-list></post-list>
+        <a routerLink="/post">POST</a>
+        
+        <router-outlet></router-outlet>
+       
     `,
     styleUrls: ['./app.component.css']
 })
