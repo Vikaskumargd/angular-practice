@@ -1,5 +1,6 @@
 <div class="comments">
+    <h3 [style.display]="comments !== undefined ? 'none':'block'">Loading</h3>
     <post-comment *ngFor="let comment of comments" [comment]="comment">
-        Loading...
+
     </post-comment>
 </div>
