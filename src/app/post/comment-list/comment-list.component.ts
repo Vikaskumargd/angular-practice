@@ -15,12 +15,12 @@ export class CommentListComponent implements OnInit, OnChanges {
     constructor(private commentService: CommentService) { }
 
     ngOnInit() {
-       
+
         this.getComments();
     }
 
     ngOnChanges() {
-       
+
         this.getComments();
     }
 
