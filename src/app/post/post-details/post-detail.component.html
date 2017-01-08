@@ -1,4 +1,6 @@
 <div>
     <h2>{{post?.title}}</h2>
     <p>{{post?.body}}</p>
+    <hr>
+    <comment-list *ngIf="post?.id" [postId]="post?.id">Loading...</comment-list>
 </div>

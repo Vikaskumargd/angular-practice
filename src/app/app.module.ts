@@ -8,6 +8,10 @@ import { PostListComponent } from './post/post-list/post-list.component';
 import { UserPostComponent } from './post/user-post/user-post.component';
 import { UserPostService } from './post/shared/user-post.service';
 import { PostDetailComponent } from './post/post-details/post-detail.component';
+import { CommentListComponent } from './post/comment-list/comment-list.component';
+import { CommentComponent } from './post/comment/comment.component';
+import { CommentService } from './post/shared/comment/comment.service';
+
 
 const routes: Routes = [
     {
@@ -43,10 +47,13 @@ const routes: Routes = [
         AppComponent,
         PostListComponent,
         UserPostComponent,
-        PostDetailComponent
+        PostDetailComponent,
+        CommentListComponent,
+        CommentComponent
     ],
     providers: [
-        UserPostService
+        UserPostService,
+        CommentService
     ],
     bootstrap: [
         AppComponent

@@ -19,13 +19,11 @@ export class PostDetailComponent implements OnInit {
     ngOnInit() {
         this.route.params
             .switchMap((params: Params) => {
-
                 return this.userPostService.getPost(+params['id']);
             })
             .subscribe(p => {
                 this.post = p;
             });
     }
-
 
 }
