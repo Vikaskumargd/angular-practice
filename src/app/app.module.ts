@@ -3,53 +3,32 @@ import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// custom modules
+import { AppRoutingModule, routableComponents } from './app-routing.module';
+
+// components
 import { AppComponent } from './app.component';
-import { PostListComponent } from './post/post-list/post-list.component';
-import { UserPostComponent } from './post/user-post/user-post.component';
-import { UserPostService } from './post/shared/user-post.service';
-import { PostDetailComponent } from './post/post-details/post-detail.component';
-import { CommentListComponent } from './post/comment-list/comment-list.component';
 import { CommentComponent } from './post/comment/comment.component';
+import { CommentListComponent } from './post/comment-list/comment-list.component';
+import { UserPostComponent } from './post/user-post/user-post.component';
+
+// services
 import { CommentService } from './post/shared/comment/comment.service';
-
-
-const routes: Routes = [
-    {
-
-        path: 'post',
-        children: [
-            {
-                path: '',
-                component: PostListComponent
-            },
-            {
-                path: ':id',
-                component: PostDetailComponent
-            }
-        ]
-
-    },
-    {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: '/post'
-    }
-];
+import { UserPostService } from './post/shared/user-post.service';
 
 
 @NgModule({
     imports: [
         BrowserModule,
         HttpModule,
-        RouterModule.forRoot(routes)
+        AppRoutingModule
     ],
     declarations: [
         AppComponent,
-        PostListComponent,
-        UserPostComponent,
-        PostDetailComponent,
         CommentListComponent,
-        CommentComponent
+        CommentComponent,
+        UserPostComponent,
+        routableComponents
     ],
     providers: [
         UserPostService,
@@ -60,3 +39,4 @@ const routes: Routes = [
     ]
 })
 export class AppModule { }
+
