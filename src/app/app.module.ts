@@ -11,11 +11,11 @@ import { AppComponent } from './app.component';
 import { CommentComponent } from './post/comment/comment.component';
 import { CommentListComponent } from './post/comment-list/comment-list.component';
 import { UserPostComponent } from './post/user-post/user-post.component';
-
+import { UserComponent } from './user/user/user.component';
 // services
 import { CommentService } from './post/shared/comment/comment.service';
 import { UserPostService } from './post/shared/user-post.service';
-
+import { UserService } from './user/shared/user.service';
 
 @NgModule({
     imports: [
@@ -28,11 +28,13 @@ import { UserPostService } from './post/shared/user-post.service';
         CommentListComponent,
         CommentComponent,
         UserPostComponent,
+        UserComponent,
         routableComponents
     ],
     providers: [
         UserPostService,
-        CommentService
+        CommentService,
+        UserService
     ],
     bootstrap: [
         AppComponent

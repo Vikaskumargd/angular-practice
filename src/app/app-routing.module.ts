@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { PostDetailComponent } from './post/post-details/post-detail.component';
 
+import { UsersListComponent } from './user/users-list/users-list.component';
+
 
 
 const routes: Routes = [
@@ -23,6 +25,15 @@ const routes: Routes = [
             }
         ]
 
+    },
+    {
+        path: 'user',
+        children: [
+            {
+                path: '',
+                component: UsersListComponent
+            }
+        ]
     },
     {
         path: '',
@@ -43,7 +54,8 @@ export class AppRoutingModule { }
 
 export const routableComponents = [
     PostListComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    UsersListComponent
 
 ];
 

@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
     selector: 'app-root',
     template: `
         <h1>{{heading}}</h1>
-        <a routerLink="/post">POST</a>
-        
+        <a routerLink="/post">Posts</a>
+        <a routerLink="/user">Users</a>
         <router-outlet></router-outlet>
        
     `,
